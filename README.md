@@ -63,8 +63,9 @@ app/               # Next.js App Routerページ
 - ✅ TypeScriptによる型安全性
 - ✅ shadcn/uiによる美しいUIコンポーネント
 - ✅ Tailwind CSSによる効率的なスタイリング
-- ✅ ESLintとPrettierによるコード品質管理
+- ✅ Biomeによる高速なリンティングとフォーマット
 - ✅ 整理されたプロジェクト構造
+- ✅ デザインシステムトークン
 
 ## ライセンス
 

@@ -24,13 +24,8 @@ project-root/
 ├── src/
 │   ├── components/             
 │   │   ├── layout/             # Layout components (Header, Footer)
-│   │   ├── ui/                 # shadcn/ui components
-│   │   └── features/           # Feature-specific components
+│   │   └── ui/                 # shadcn/ui components
 │   ├── hooks/                  # Custom React hooks
-│   ├── models/                 # TypeScript type definitions
-│   │   ├── user.ts
-│   │   ├── product.ts
-│   │   └── common.ts
 │   ├── services/               # API services
 │   │   └── userService.ts
 │   ├── utils/                  # Utility functions
@@ -39,21 +34,25 @@ project-root/
 │   ├── lib/                    # Core library code
 │   │   ├── utils.ts
 │   │   └── constants.ts
-│   ├── design/                 # Design system
-│   │   └── tokens/             # Design tokens
-│   │       ├── colors.ts
-│   │       ├── spacing.ts
-│   │       └── typography.ts
-│   └── data/                   # Sample data
-│       ├── users.ts
-│       └── products.ts
+│   └── design/                 # Design system
+│       └── tokens/             # Design tokens
+│           ├── colors.ts
+│           ├── spacing.ts
+│           └── typography.ts
+├── types/                      # TypeScript type definitions
+│   ├── index.ts
+│   └── api/                    # API type definitions
+│       ├── common.ts
+│       ├── user.ts
+│       └── index.ts
 ```
 
 ### 3. Configuration Updates
-- **tsconfig.json**: Updated path alias from `@/*` pointing to root to `@/*` pointing to `src/*`
+- **tsconfig.json**: Updated path alias `@/*` pointing to `src/*`, target set to ES2017
 - **tailwind.config.ts**: Updated content paths to include `src` directory
 - **next.config.js**: Added remote image patterns for Unsplash and DiceBear
-- **components.json**: Already configured correctly for shadcn/ui
+- **components.json**: Configured for shadcn/ui
+- **biome.json**: Migrated from ESLint to Biome for faster linting and formatting
 
 ### 4. New Features Added
 - **Header Component**: Responsive navigation with mobile menu
@@ -61,9 +60,8 @@ project-root/
 - **Loading States**: Dedicated loading UI
 - **Error Handling**: Error boundary component
 - **404 Page**: Custom not-found page
-- **Products Page**: Sample product listing with cards
-- **Design Tokens**: Centralized design system values
-- **Type Definitions**: Comprehensive TypeScript models
+- **Design Tokens**: Centralized design system values (colors, spacing, typography)
+- **Type Definitions**: Comprehensive TypeScript models in `types/` directory
 - **Utility Functions**: Date formatting and validation helpers
 - **Constants**: Centralized app configuration
 
@@ -77,10 +75,10 @@ project-root/
 
 ## Next Steps
 1. Add more features by creating new directories under `app/`
-2. Create feature-specific components in `src/components/features/`
-3. Add new models as needed in `src/models/`
-4. Implement real API calls in services
-5. Extend the design system with more tokens
+2. Create feature-specific components in `src/components/`
+3. Add new type definitions as needed in `types/`
+4. Implement real API calls in `src/services/`
+5. Extend the design system with more tokens in `src/design/tokens/`
 
 ## Running the Project
 ```bash

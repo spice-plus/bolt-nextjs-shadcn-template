@@ -57,9 +57,9 @@ function generateColorScale(baseColor: string): Record<number, string> {
   if (!match) return { 500: baseColor };
 
   const [, h, s, l] = match;
-  const hue = parseInt(h);
-  const saturation = parseInt(s);
-  const lightness = parseInt(l);
+  const hue = parseInt(h, 10);
+  const saturation = parseInt(s, 10);
+  const lightness = parseInt(l, 10);
 
   return {
     50: `hsl(${hue}, ${Math.max(saturation - 20, 10)}%, 97%)`,
@@ -90,7 +90,7 @@ function generateStateVariants(baseColor: string) {
   }
 
   const [, h, s, l] = match;
-  const lightness = parseInt(l);
+  const lightness = parseInt(l, 10);
 
   return {
     base: hsl,
